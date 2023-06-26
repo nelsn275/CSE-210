@@ -43,6 +43,7 @@ class Scripture
 
     public bool IsCompletelyHidden()
     {
-        return true;
+        bool allHidden = words.All(word => word.Equals("_"));
+        return allHidden;
     }
 }
