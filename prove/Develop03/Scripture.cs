@@ -19,18 +19,18 @@ class Scripture
     public void HideRandomWords()
     {
         Random random = new Random();
-
-        foreach (Word word in words)
+        int numWordstoRemove = random.Next(2, 5);
+        int wordsRemoved = 0;
+        do
         {
-            if (!word.GetIsHidden())
-            {
-                double randomValue = random.NextDouble();
-                if (randomValue < 0.2) // Hide 20% of the words
-                {
-                    
-                }
-            } 
-        }
+            int randomIndex = random.Next(0, words.Count());
+             if (words[randomIndex].GetIsHidden() == false)
+             {
+                words[randomIndex].Hide();
+                wordsRemoved ++;
+             }
+
+        } while(numWordstoRemove != wordsRemoved && this.IsCompletelyHidden() == false);
     }
     public string GetDisplayText()
     {
@@ -54,7 +54,15 @@ class Scripture
 
     public bool IsCompletelyHidden()
     {
-        bool allHidden = words.All(word => word.Equals("_"));
+        bool allHidden = true;
+        foreach(Word word in words)
+        {
+            if (word.GetIsHidden() == false)
+            {
+                allHidden = false;
+                break;
+            }
+        }
         return allHidden;
     }
 }
