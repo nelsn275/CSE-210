@@ -18,9 +18,20 @@ class Scripture
 
     public void HideRandomWords()
     {
-        
-    }
+        Random random = new Random();
 
+        foreach (Word word in words)
+        {
+            if (!word.GetIsHidden())
+            {
+                double randomValue = random.NextDouble();
+                if (randomValue < 0.2) // Hide 20% of the words
+                {
+                    
+                }
+            } 
+        }
+    }
     public string GetDisplayText()
     {
         string scriptureText = "";
