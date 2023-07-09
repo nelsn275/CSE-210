@@ -29,7 +29,7 @@ class Program
 
         while (choice != 6)
         {
-            Console.WriteLine($"You have {points} points");
+            Console.WriteLine($"You have {GetPoints()} points");
             foreach (string item in mainMenu){
                 Console.WriteLine(item);
             }
