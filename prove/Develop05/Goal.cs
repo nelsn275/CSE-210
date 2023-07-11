@@ -1,12 +1,21 @@
 
 public abstract class Goal{
 
-string shortName;
+    protected string shortName;
 
-string description;
+    protected string description;
 
-int points;
+    protected int points, totalPoints;
 
+    public Goal(string _name, string _description, int _points)
+    {
+        shortName = _name;
+        description = _description;
+        points = _points;
+    }
+    public Goal()
+    {
+    }
 
     public void SetGoalName()
     {
@@ -45,9 +54,9 @@ int points;
         
     public abstract bool IsComplete();
 
-    public virtual string GetDetailsString()
+    public virtual string GetStringRepresentation()
     {
-        if (IsComplete())
+             if (IsComplete())
         {
             return $"[X] {GetName()} {GetDescription()}";
         }
@@ -56,9 +65,5 @@ int points;
             return $"[ ] {GetName()} {GetDescription()}"; 
         }
     }
-
-    public abstract string GetStringRepresentation();
-
-
 
 }

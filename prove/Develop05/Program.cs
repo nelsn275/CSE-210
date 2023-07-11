@@ -6,6 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        GoalManager goalManager = new GoalManager();
+
         List<string> mainMenu = new List<string>()
         {
             "Menu Options:",
@@ -29,11 +31,11 @@ class Program
 
         while (choice != 6)
         {
-            Console.WriteLine($"You have {GetPoints()} points");
+            Console.WriteLine($"You have {goalManager.GetScore()} points");
             foreach (string item in mainMenu){
                 Console.WriteLine(item);
             }
-            Console.Write("Select a choice from the menu");
+            Console.Write("Select a choice from the menu ");
             choice = int.Parse(Console.ReadLine());
 
             switch(choice)
@@ -43,7 +45,7 @@ class Program
                     {
                         Console.WriteLine(option);
                     }
-                    Console.WriteLine("What type of Goal would you like to create?");
+                    Console.WriteLine("What type of Goal would you like to create? ");
                     int goalChoice = int.Parse(Console.ReadLine());
 
                     switch(goalChoice)
@@ -53,7 +55,7 @@ class Program
                             simplegoal.SetGoalName();
                             simplegoal.SetDescription();
                             simplegoal.SetPoints();
-                            simplegoal.AddToList(simplegoal);
+                            goalManager.AddToList(simplegoal.GetStringRepresentation());
                             break;
                         case 2:
                             ChecklistGoal checklistgoal = new ChecklistGoal();
@@ -62,20 +64,20 @@ class Program
                             checklistgoal.SetPoints();
                             checklistgoal.SetTarget();
                             checklistgoal.SetBonusPoints();
-                            checklistgoal.AddToList(checklistgoal);
+                            goalManager.AddToList(checklistgoal.GetStringRepresentation());
                             break;
                         case 3:
                             EternalGoal eternalgoal = new EternalGoal();
                             eternalgoal.SetGoalName();
                             eternalgoal.SetDescription();
                             eternalgoal.SetPoints();
-                            eternalgoal.AddToList(eternalgoal);
+                            goalManager.AddToList(eternalgoal.GetStringRepresentation());
                             break;
                     }
                     break;
 
                 case 2:
-                    DisplayGoals();
+                    goalManager.DisplayGoals();
                     break;
 
                 case 3:
@@ -102,7 +104,7 @@ class Program
                     break;
 
                 case 5:
-                    RecordEvenet();
+                    goalManager.DisplayGoals();
                     break;
 
             }

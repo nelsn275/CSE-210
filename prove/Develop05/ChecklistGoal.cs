@@ -5,6 +5,15 @@ public class ChecklistGoal : Goal{
     int target;
     int bonusPoints;
 
+    public ChecklistGoal(string _goalName, string _goalDescription, int _points, int _bonuspoints, int _target, int _amountCompleted) : base (_goalName, _goalDescription, _points)
+    {
+        amountCompleted = _amountCompleted;
+        target = _target;
+        bonusPoints = _bonuspoints;
+    }
+    public ChecklistGoal()
+    {
+    }
 
     public void SetTarget()
     {
@@ -22,12 +31,11 @@ public class ChecklistGoal : Goal{
         amountCompleted +=1;
         if (IsComplete())
         {
-            AddPoints(GetPoints());
-            AddPoints(bonusPoints);
+            ;
         }
         else
         {
-            AddPoints(GetPoints());
+            ;
         }
     }
 
@@ -44,19 +52,15 @@ public class ChecklistGoal : Goal{
 
     }
 
-public override string GetDetailsString(){
-    if (IsComplete())
-    {
-        return $"[X] {GetName()} {GetDescription()} -- Currently Completed {amountCompleted}/{target}";
-    }
-    else
-    {
-        return $"[ ] {GetName()} {GetDescription()} -- Currently Completed {amountCompleted}/{target}";
-
-    }
-}
     public override string GetStringRepresentation()
     {
-        return GetDetailsString();
+        if (IsComplete())
+        {
+            return $"[X] {GetName()} {GetDescription()} -- Currently Completed {amountCompleted}/{target}";
+        }
+        else
+        {
+            return $"[ ] {GetName()} {GetDescription()} -- Currently Completed {amountCompleted}/{target}";
+        }
     }
 }

@@ -1,7 +1,7 @@
 
 public class GoalManager{
     
-    List<Goal> goals = new List<Goal>();
+    List<string> goals = new List<string>();
     
     int score;
 
@@ -9,15 +9,15 @@ public class GoalManager{
 
     public void DisplayGoals()
     {
-        foreach (Goal goal in goals)
+        foreach (string goal in goals)
         {
             Console.WriteLine(goal);
         }
     }
 
-    public void DisplayScore()
+    public int GetScore()
     {
-        Console.WriteLine(score);
+        return score;
     }
 
     public void AddPoints(int points)
@@ -25,8 +25,8 @@ public class GoalManager{
         score += points;
     }
 
-    public void AddToList(Goal goal)
+    public void AddToList(string goalInfo)
     {
-        goals.Add(goal);
+        goals.Add(goalInfo);
     }
 }
