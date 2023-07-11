@@ -13,12 +13,12 @@ public class SimpleGoal : Goal{
 
     public override void RecordEvent()
     {
-        ;
+        isComplete = true;
     }
 
     public override bool IsComplete()
     {
-        return true;
+        return isComplete;
     }
 
 

@@ -37,6 +37,7 @@ class Program
             }
             Console.Write("Select a choice from the menu ");
             choice = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
             switch(choice)
             {
@@ -47,6 +48,7 @@ class Program
                     }
                     Console.Write("What type of Goal would you like to create? ");
                     int goalChoice = int.Parse(Console.ReadLine());
+                    Console.WriteLine();
 
                     switch(goalChoice)
                     {
