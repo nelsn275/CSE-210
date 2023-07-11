@@ -21,10 +21,5 @@ public class SimpleGoal : Goal{
         return true;
     }
 
-    public override string GetStringRepresentation()
-    {
-        return "";
-    }
-
 
 }

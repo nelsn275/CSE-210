@@ -45,7 +45,7 @@ class Program
                     {
                         Console.WriteLine(option);
                     }
-                    Console.WriteLine("What type of Goal would you like to create? ");
+                    Console.Write("What type of Goal would you like to create? ");
                     int goalChoice = int.Parse(Console.ReadLine());
 
                     switch(goalChoice)
