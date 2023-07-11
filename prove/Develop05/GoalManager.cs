@@ -4,14 +4,15 @@ public class GoalManager{
     List<string> goals = new List<string>();
     
     int score;
-
+    int count = 1;
 
 
     public void DisplayGoals()
     {
         foreach (string goal in goals)
         {
-            Console.WriteLine(goal);
+            Console.WriteLine($"{count}. {goal}");
+            count ++;
         }
     }
 
