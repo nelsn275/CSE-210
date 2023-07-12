@@ -31,7 +31,9 @@ class Program
 
         while (choice != 6)
         {
+            Console.WriteLine();
             Console.WriteLine($"You have {goalManager.GetScore()} points");
+            Console.WriteLine();
             foreach (string item in mainMenu){
                 Console.WriteLine(item);
             }
