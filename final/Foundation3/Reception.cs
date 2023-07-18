@@ -1,7 +1,7 @@
 
 public class Reception : Event{
 
-    public string RSVPEmail;
+    string RSVPEmail;
 
     public Reception(string _eventName, string _description, string _date, string _time, string _eventType, string _rsvpEmail) : base (_eventName, _description, _date, _time, _eventType)
     {

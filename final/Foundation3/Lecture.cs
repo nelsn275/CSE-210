@@ -2,8 +2,8 @@
 public class Lecture : Event{
 
 
-    public string speakerName;
-    public int eventCapacity;
+    string speakerName;
+    int eventCapacity;
 
     public Lecture(string _eventName, string _description, string _date, string _time, string _eventType, string _speakerName, int _capacity) : base(_eventName, _description, _date, _time, _eventType)
     {

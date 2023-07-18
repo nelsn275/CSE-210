@@ -1,6 +1,6 @@
 public class Address{
 
-    public string streetAddress, city, stateProvince, country;
+    string streetAddress, city, stateProvince, country;
 
     public Address(string _streetAddress, string _city, string _stateProvince, string _country)
     {
