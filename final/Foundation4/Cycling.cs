@@ -1,6 +1,6 @@
 
 public class Cycling : Exercise{
-    public double speed;
+    double speed;
 
     public Cycling(string _date, double _activityLength, double _speed) : base(_date, _activityLength)
     {
